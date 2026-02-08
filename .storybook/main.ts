@@ -7,18 +7,14 @@ const __dirname = path.dirname(__filename)
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.mdx",
     '../src/**/*.stories.@(ts|tsx)'
   ],
   addons: [
-    "@chromatic-com/storybook",
-    "@storybook/addon-vitest",
     "@storybook/addon-a11y",
-    "@storybook/addon-docs"
   ],
   framework: {
     name: "@storybook/react-vite",
-    options: {},
+    options: { builder: {} },
   },
   async viteFinal(config) {
     const { mergeConfig } = await import('vite')
