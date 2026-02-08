@@ -1,5 +1,3 @@
-
-
 .container {
     width: 100%;
     margin-left: auto;
@@ -9,7 +7,7 @@
 .filterSearchContainer {
     display: flex;
     gap: 0.5rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--sf-border-color);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     position: relative;
@@ -33,8 +31,8 @@
 .selectedOperator {
     display: inline-flex;
     align-items: center;
-    background-color: var(--subitem-bg);
-    color: var(--item-text);
+    background-color: var(--sf-subitem-bg);
+    color: var(--sf-item-text);
     padding: 0.375rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 14px;
@@ -45,7 +43,7 @@
 }
 
 .selectedOperator:hover {
-    background-color: var(--subitem-hover-bg, rgba(0, 0, 0, 0.07));
+    background-color: var(--sf-subitem-hover-bg, rgba(0, 0, 0, 0.07));
 }
 
 .selectedOperator span {
@@ -57,8 +55,8 @@
 .selectedItem {
     display: flex;
     align-items: center;
-    background-color: var(--item-bg);
-    color: var(--item-text);
+    background-color: var(--sf-item-bg);
+    color: var(--sf-item-text);
     padding: 0.375rem 0.5rem;
     border-radius: 0.25rem;
     flex-shrink: 0;
@@ -81,8 +79,8 @@
 .selectedSubItem, .selectedText {
     display: inline-flex;
     align-items: center;
-    background-color: var(--subitem-bg);
-    color: var(--item-text);
+    background-color: var(--sf-subitem-bg);
+    color: var(--sf-item-text);
     padding: 0.375rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 14px;
@@ -93,7 +91,7 @@
 }
 
 .selectedSubItem:hover {
-    background-color: var(--subitem-hover-bg, rgba(0, 0, 0, 0.07));
+    background-color: var(--sf-subitem-hover-bg, rgba(0, 0, 0, 0.07));
 }
 
 .selectedSubItem span,
@@ -112,7 +110,7 @@
 
 .selectedChevronIcon {
     margin-left: 0.25rem;
-    color: var(--text-muted, #6b7280);
+    color: var(--sf-text-muted, #6b7280);
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
@@ -145,10 +143,10 @@
 }
 
 .dropdownItemContainer{
-    border: 1px solid var(--dropdown-border);
+    border: 1px solid var(--sf-dropdown-border);
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-    background: var(--dropdown-bg);
+    background: var(--sf-dropdown-bg);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / .04)) drop-shadow(0 4px 3px rgb(0 0 0 / .1));
     overflow: auto;
     max-height: 15rem;
@@ -156,10 +154,10 @@
 }
 
 .dropdownSubItemWrapper {
-    border: 1px solid var(--dropdown-border);
+    border: 1px solid var(--sf-dropdown-border);
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-    background: var(--dropdown-bg);
+    background: var(--sf-dropdown-bg);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / .04)) drop-shadow(0 4px 3px rgb(0 0 0 / .1));
     overflow: hidden;
     max-height: 15rem;
@@ -183,18 +181,18 @@
 
 .dropdownSubItemSearchInput {
     padding: 0.375rem 0.625rem 0.375rem 2rem;
-    border: 1px solid var(--dropdown-border);
+    border: 1px solid var(--sf-dropdown-border);
     border-radius: 0.375rem;
     font-size: 14px;
     width: 100%;
     min-height: 2rem;
-    background-color: var(--dropdown-bg);
+    background-color: var(--sf-dropdown-bg);
     outline: none;
     transition: border-color 0.2s;
 }
 
 .dropdownSubItemSearchInput:focus {
-    border-color: var(--primary-color, #6b7280);
+    border-color: var(--sf-primary-color, #6b7280);
 }
 
 .dropdownSubItemSearchIcon {
@@ -205,7 +203,7 @@
     margin: auto 0;
     height: 16px;
     width: 16px;
-    color: var(--text-muted, #6b7280);
+    color: var(--sf-text-muted, #6b7280);
     pointer-events: none;
     z-index: 1;
     display: flex;
@@ -213,10 +211,10 @@
 }
 
 .operatorDropdownItemContainer {
-    border: 1px solid var(--dropdown-border);
+    border: 1px solid var(--sf-dropdown-border);
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-    background: var(--dropdown-bg);
+    background: var(--sf-dropdown-bg);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / .04)) drop-shadow(0 4px 3px rgb(0 0 0 / .1));
     overflow: auto;
     max-height: 15rem;
@@ -230,7 +228,7 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--sf-text-color);
     transition: background-color 0.2s, border-radius 0.2s;
     min-height: 2rem;
 }
@@ -240,17 +238,17 @@
 }
 
 .queryItem:hover, .dropdownItem:hover {
-    background-color: var(--dropdown-hover-bg);
+    background-color: var(--sf-dropdown-hover-bg);
     border-radius: 0.375rem;
 }
 
 .queryItem:active, .dropdownItem:active {
-    background-color: var(--dropdown-active-bg, var(--dropdown-hover-bg));
+    background-color: var(--sf-dropdown-active-bg, var(--sf-dropdown-hover-bg));
     border-radius: 0.375rem;
 }
 
 .queryItem[data-selected="true"], .dropdownItem[data-selected="true"] {
-    background-color: var(--dropdown-active-bg, var(--dropdown-hover-bg));
+    background-color: var(--sf-dropdown-active-bg, var(--sf-dropdown-hover-bg));
     border-radius: 0.375rem;
 }
 
@@ -265,16 +263,16 @@
 .noItemsFound, .loadItems {
     padding: 0.5rem 0.75rem;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--sf-text-color);
 }
 
 .clearFilterButton {
     padding: 0.25rem 0.25rem;
     cursor: pointer;
     font-size: 14px;
-    color: var(--item-text);
+    color: var(--sf-item-text);
     border-radius: 99px;
-    background-color: var(--clear-btn-bg);
+    background-color: var(--sf-clear-btn-bg);
 }
 
 .scrollableContainerWithButton {
