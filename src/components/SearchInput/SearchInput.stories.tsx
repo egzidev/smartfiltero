@@ -1,8 +1,8 @@
 import {useRef, useState} from "react";
 import {Meta, StoryObj} from "@storybook/react-vite";
-import Input from "@/components/Input";
+import { SearchInput } from "@/components/SearchInput";
+import searchInputStyles from "@/components/SearchInput/search-input.module.css";
 import styles from "@/styles.module.css";
-
 /**
  * Input component is the search/filter input field used in SmartFiltero.
  * It handles user input, focus events, and displays placeholder text.
@@ -11,7 +11,7 @@ import styles from "@/styles.module.css";
  */
 export default {
   title: "Components/Input",
-  component: Input,
+  component: SearchInput,
   parameters: {
     layout: "centered",
     docs: {
@@ -90,18 +90,17 @@ The Input component is the main search/filter input field.
     },
     handleInputChange: () => {
     },
-    validateStyle: (style: string) => styles[style],
   },
-} as Meta<typeof Input>;
+} as Meta<typeof SearchInput>;
 
 const Template = (args: any) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState(args.query || '');
 
   return (
-    <div className={`${styles.container} ${styles.inputContainer}`}>
-      <div className={styles.searchContainer}>
-        <Input
+    <div className={`${styles.container} ${styles.filterSearchContainer}`}>
+      <div className={searchInputStyles.searchContainer}>
+        <SearchInput
           {...args}
           inputRef={inputRef}
           query={query}
@@ -120,9 +119,9 @@ const FocusStateTemplate = (args: any) => {
 
   return (
     <>
-      <div className={`${styles.container} ${styles.inputContainer}`}>
-        <div className={styles.searchContainer}>
-          <Input
+      <div className={`${styles.container} ${styles.filterSearchContainer}`}>
+        <div className={searchInputStyles.searchContainer}>
+          <SearchInput
             {...args}
             inputRef={inputRef}
             query={query}
@@ -139,7 +138,7 @@ const FocusStateTemplate = (args: any) => {
   )
 }
 
-export const Default: StoryObj<typeof Input> = {
+export const Default: StoryObj<typeof SearchInput> = {
   render: Template,
   args: {
     placeholder: "Search or filter...",
@@ -156,7 +155,7 @@ export const Default: StoryObj<typeof Input> = {
 /**
  * Input with a pre-filled value.
  */
-export const WithValue: StoryObj<typeof Input> = {
+export const WithValue: StoryObj<typeof SearchInput> = {
   render: Template,
   args: {
     query: "laptop",
@@ -174,7 +173,7 @@ export const WithValue: StoryObj<typeof Input> = {
 /**
  * Input in focused state with live focus indicator.
  */
-export const FocusedState: StoryObj<typeof Input> = {
+export const FocusedState: StoryObj<typeof SearchInput> = {
   render: FocusStateTemplate,
   args: {
     placeholder: "Search or filter...",
@@ -191,7 +190,7 @@ export const FocusedState: StoryObj<typeof Input> = {
 /**
  * Input with custom placeholder.
  */
-export const CustomPlaceholder: StoryObj<typeof Input> = {
+export const CustomPlaceholder: StoryObj<typeof SearchInput> = {
   render: Template,
   args: {
     placeholder: "Search orders, customers, or filter by status...",
